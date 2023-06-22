@@ -81,22 +81,21 @@ const buildHtml = ({
 
 const pathRegex =
   /^\/(?<boardId>[\w\-]+)\/(?<articleId>M\.\d+\.A\.[A-Za-z0-9]{3})$/;
+const imgUrlRegex =
+  /(?:^|\s)(?<imgUrl>https?:\/\/[\w\-]+?(?:\.[\w\-\.]+?)+?\/[^?#]+?\.(?:jpg|jpeg|png|gif|bmp))(?:[^\w$])/;
 
 function getOg(html: string) {
   const $ = load(html);
-  console.log({ html });
   const title =
     $("meta[property='og:title']").attr("content") ?? $("title").text();
   const description =
     $("meta[property='og:description']").attr("content") ??
     $("meta[name='description']").attr("content") ??
     "";
-  const img = $("meta[property='og:image']").attr("content") ?? "";
-  console.log({
-    title,
-    description,
-    img,
-  });
+  const img =
+    $("meta[property='og:image']").attr("content") ??
+    html.match(imgUrlRegex)?.[1] ??
+    "";
   return { title, description, img };
 }
 
