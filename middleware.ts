@@ -81,8 +81,6 @@ const buildHtml = ({
 
 const pathRegex =
   /^\/(?<boardId>[\w\-]+)\/(?<articleId>M\.\d+\.A\.[A-Za-z0-9]{3})$/;
-const imgUrlRegex =
-  /(?:^|\s)(?<imgUrl>https?:\/\/[\w\-]+?(?:\.[\w\-\.]+?)+?\/[^?#]+?\.(?:jpg|jpeg|png|gif|bmp))(?:[^\w$])/;
 
 function getOg(html: string) {
   const $ = load(html);
@@ -94,7 +92,7 @@ function getOg(html: string) {
     "";
   const img =
     $("meta[property='og:image']").attr("content") ??
-    html.match(imgUrlRegex)?.[1] ??
+    $("img").attr("src") ??
     "";
   return { title, description, img };
 }
