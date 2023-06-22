@@ -2,4 +2,6 @@ img {
   width: auto;
   max-height: 50vh;
   max-height: 50dvh;
+  margin: auto;
+  display: block;
 }
