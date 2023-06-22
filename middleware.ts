@@ -47,15 +47,17 @@ const buildHtml = ({
       </script>
     </head>
     <body>
-      <div class="container">
+      <section class="container">
         <h1>${title}</h1>
-        <p>${description}</p>
-        <img src="${img}" />
+        <article>
+          <p>${description}</p>
+          <img src="${img}" />
+        </article>
         <p>
           <a href="${originalUrl}">原始連結：${originalUrl}</a>
         </p>
         <p>您將在 5 秒後被導向原始連結，若無法導向，請點擊上方連結。</p>
-      </div>
+      </section>
     </body>
     <footer>
       <div class="container">
