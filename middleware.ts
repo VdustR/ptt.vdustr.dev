@@ -84,6 +84,7 @@ const pathRegex =
 
 function getOg(html: string) {
   const $ = load(html);
+  console.log({ html });
   const title =
     $("meta[property='og:title']").attr("content") ?? $("title").text();
   const description =
@@ -91,6 +92,11 @@ function getOg(html: string) {
     $("meta[name='description']").attr("content") ??
     "";
   const img = $("meta[property='og:image']").attr("content") ?? "";
+  console.log({
+    title,
+    description,
+    img,
+  });
   return { title, description, img };
 }
 
@@ -103,7 +109,12 @@ export default async function middleware(request: Request) {
   const boardId = matches.groups?.["boardId"] ?? "";
   const articleId = matches.groups?.["articleId"] ?? "";
   const pttResponse = await fetch(
-    `https://www.ptt.cc/bbs/${boardId}/${articleId}.html`
+    `https://www.ptt.cc/bbs/${boardId}/${articleId}.html`,
+    {
+      headers: {
+        Cookie: "over18=1",
+      },
+    }
   );
   const pttHtml = await pttResponse.text();
   const { title, description, img } = getOg(pttHtml);
