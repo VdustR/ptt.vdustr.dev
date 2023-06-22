@@ -23,11 +23,6 @@ const buildHtml = ({
   <!DOCTYPE html>
   <html lang="zh-Hant">
     <head>
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516253226822868"
-        crossorigin="anonymous"
-      ></script>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>${title} | ptt.vdustr.dev</title>
@@ -53,6 +48,23 @@ const buildHtml = ({
           <p>${description}</p>
           <img src="${img}" />
         </article>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516253226822868"
+          crossorigin="anonymous"
+        ></script>
+        <!-- Responsive Square -->
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7516253226822868"
+          data-ad-slot="1066948046"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         <p>
           <a href="${originalUrl}">原始連結：${originalUrl}</a>
         </p>
