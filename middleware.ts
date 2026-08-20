@@ -74,7 +74,7 @@ const buildHtml = ({
     </body>
     <footer>
       <div class="container">
-        <p>Powered by <a href="https://vdustr.dev/">VdustR</a></p>
+        <p>Powered by <a href="https://vdustr.github.io/">VdustR</a></p>
       </div>
     </footer>
   </html>
