@@ -1,5 +1,8 @@
 # ptt.vdustr.dev
 
+> [!IMPORTANT]
+> This project has been sunset and is no longer maintained. Use [PTT Link Switcher](https://vp-tw.github.io/ptt-link-switcher/) for converting PTT article links across supported readers. Its source code is available at [`vp-tw/ptt-link-switcher`](https://github.com/vp-tw/ptt-link-switcher).
+
 This is the source code of [ptt.vdustr.dev](https://ptt.vdustr.dev), which is a PTT redirect page.
 
 ## Local Testing
